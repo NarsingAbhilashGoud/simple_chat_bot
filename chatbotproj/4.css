@@ -1,0 +1,126 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #1b1b1b;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.chat-container {
+    width: 400px;
+    background: #1e1e1e;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    animation: fadeIn 1s ease-out;
+}
+
+.neon-bar {
+    background: linear-gradient(45deg, #ff61a6, #06d6a0);
+    padding: 20px;
+    text-align: center;
+    color: white;
+    font-size: 24px;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 2px;
+    animation: neonEffect 1.5s infinite alternate;
+}
+
+@keyframes neonEffect {
+    0% {
+        text-shadow: 0 0 5px #ff61a6, 0 0 10px #ff61a6, 0 0 15px #ff61a6, 0 0 20px #06d6a0, 0 0 30px #06d6a0;
+    }
+    100% {
+        text-shadow: 0 0 10px #ff61a6, 0 0 20px #ff61a6, 0 0 30px #ff61a6, 0 0 40px #06d6a0, 0 0 50px #06d6a0;
+    }
+}
+
+.chat-box {
+    padding: 20px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.messages {
+    flex: 1;
+    overflow-y: auto;
+    margin-bottom: 20px;
+    padding-right: 10px;
+}
+
+.message {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.message.bot .message-text {
+    background-color: #06d6a0;
+    color: #fff;
+    border-radius: 20px;
+    padding: 10px 20px;
+    max-width: 70%;
+}
+
+.message.user .message-text {
+    background-color: #ff61a6;
+    color: #fff;
+    border-radius: 20px;
+    padding: 10px 20px;
+    max-width: 70%;
+    margin-left: auto;
+}
+
+.input-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#user-input {
+    width: 80%;
+    padding: 10px;
+    border: none;
+    border-radius: 25px;
+    outline: none;
+    font-size: 16px;
+    background: #333;
+    color: white;
+    margin-right: 10px;
+    animation: slideIn 0.5s ease-out;
+}
+
+button {
+    background-color: #ff61a6;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    animation: fadeIn 0.5s ease-out;
+}
+
+button:hover {
+    background-color: #ff4081;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
